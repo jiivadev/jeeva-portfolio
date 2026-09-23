@@ -119,7 +119,7 @@ function Navbar() {
           {/* Resume */}
 
           <a
-            href='/resume.pdf'
+            href={`${import.meta.env.BASE_URL}resume.pdf`}
             target='_blank'
             rel='noopener noreferrer'
             className='navbar-resume'
@@ -158,7 +158,7 @@ function Navbar() {
         ))}
 
         <a
-          href='/resume.pdf'
+          href={`${import.meta.env.BASE_URL}resume.pdf`}
           target='_blank'
           rel='noopener noreferrer'
           className='mobile-resume'

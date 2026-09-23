@@ -30,7 +30,7 @@ function Hero() {
             </a>
 
             <a
-              href='/resume.pdf'
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               target='_blank'
               rel='noopener noreferrer'
               className='secondary-button'
@@ -41,7 +41,7 @@ function Hero() {
 
           <div className='social-links'>
             <a
-              href='YOUR_GITHUB_URL'
+              href='https://github.com/jiivadev'
               target='_blank'
               rel='noopener noreferrer'
               aria-label='GitHub'
@@ -50,7 +50,7 @@ function Hero() {
             </a>
 
             <a
-              href='YOUR_LINKEDIN_URL'
+              href='https://www.linkedin.com/in/jeeva-muthu'
               target='_blank'
               rel='noopener noreferrer'
               aria-label='LinkedIn'
@@ -58,7 +58,7 @@ function Hero() {
               <FaLinkedin />
             </a>
 
-            <a href='mailto:YOUR_EMAIL' aria-label='Email'>
+            <a href='mailto:jackjeevajiiva@gmail.com' aria-label='Email'>
               <FaEnvelope />
             </a>
           </div>
