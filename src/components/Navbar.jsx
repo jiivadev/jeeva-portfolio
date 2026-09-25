@@ -1,10 +1,28 @@
 import { useEffect, useState } from 'react';
-import { FaBars, FaTimes, FaDownload } from 'react-icons/fa';
+
+import { FaBars, FaTimes, FaDownload, FaMoon, FaSun } from 'react-icons/fa';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+
+    return savedTheme !== 'light';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    if (darkMode) {
+      root.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      root.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [darkMode]);
 
   /*
         Detect page scrolling
@@ -116,6 +134,17 @@ function Navbar() {
         {/* Right side */}
 
         <div className='navbar-actions'>
+          <button
+            type='button'
+            className='theme-toggle'
+            onClick={() => setDarkMode((prev) => !prev)}
+            aria-label={
+              darkMode ? 'Switch to light mode' : 'Switch to dark mode'
+            }
+          >
+            {darkMode ? <FaSun /> : <FaMoon />}
+          </button>
+
           {/* Resume */}
 
           <a

@@ -1,20 +1,63 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from 'react-icons/fa';
 import profileImage from '../assets/profile.jpg';
 
 function Hero() {
+  const roles = [
+    'Full Stack .NET Developer',
+    'Software Engineer',
+    'React Developer',
+  ];
+
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+
+    const typingSpeed = isDeleting ? 50 : 100;
+
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        setDisplayText(currentRole.substring(0, displayText.length + 1));
+
+        if (displayText.length === currentRole.length) {
+          setTimeout(() => {
+            setIsDeleting(true);
+          }, 1400);
+        }
+      } else {
+        setDisplayText(currentRole.substring(0, displayText.length - 1));
+
+        if (displayText.length === 0) {
+          setIsDeleting(false);
+
+          setRoleIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, roleIndex]);
+
   return (
     <section id='home' className='hero'>
       <div className='hero-content'>
         <div className='hero-text'>
           <span className='hero-greeting'>Hello, I'm</span>
 
-          <h1>
+          <h1 className='hero-name'>
             Jeeva <span>M</span>
           </h1>
 
-          <h2>
-            Full Stack <span>.NET</span> Developer
+          {/* Typing Designation */}
+
+          <h2 className='hero-designation'>
+            <span className='typing-text'>{displayText}</span>
+
+            <span className='typing-cursor'>|</span>
           </h2>
 
           <p className='hero-description'>
