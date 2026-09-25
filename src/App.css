@@ -70,7 +70,6 @@ section {
 
 .navbar-new {
   position: fixed;
-
   top: 0;
   left: 0;
 
@@ -93,27 +92,21 @@ section {
   position: relative;
 
   max-width: 1250px;
-
   height: 62px;
 
   margin: 0 auto;
-
   padding: 0 10px 0 22px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   border: 1px solid rgba(148, 163, 184, 0.08);
-
   border-radius: 16px;
 
   background: rgba(7, 11, 22, 0.45);
 
   backdrop-filter: blur(15px);
-
   -webkit-backdrop-filter: blur(15px);
 
   transition:
@@ -144,15 +137,11 @@ section {
 
 .navbar-logo {
   display: flex;
-
   align-items: center;
-
   gap: 5px;
 
   font-size: 19px;
-
   font-weight: 800;
-
   letter-spacing: -0.5px;
 
   color: #ffffff;
@@ -180,9 +169,7 @@ section {
 
 .navbar-links {
   display: flex;
-
   align-items: center;
-
   gap: 5px;
 }
 
@@ -194,7 +181,6 @@ section {
   color: #64748b;
 
   font-size: 12px;
-
   font-weight: 500;
 
   border-radius: 7px;
@@ -226,11 +212,9 @@ section {
   position: absolute;
 
   left: 50%;
-
   bottom: 2px;
 
   width: 4px;
-
   height: 4px;
 
   transform: translateX(-50%);
@@ -255,52 +239,16 @@ section {
 }
 
 /* =========================================
-   RESUME BUTTON
-========================================= */
-
-.navbar-resume {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  padding: 9px 15px;
-
-  border-radius: 8px;
-
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-
-  color: #03111f;
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.navbar-resume:hover {
-  transform: translateY(-2px);
-
-  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
-}
-
-/* =========================================
    THEME TOGGLE
 ========================================= */
 
 .theme-toggle {
   width: 38px;
-
   height: 38px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   border: 1px solid rgba(148, 163, 184, 0.12);
@@ -331,18 +279,48 @@ section {
 }
 
 /* =========================================
-   MOBILE MENU BUTTON
+   RESUME
+========================================= */
+
+.navbar-resume {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 15px;
+
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+
+  color: #03111f;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbar-resume:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+}
+
+/* =========================================
+   MOBILE BUTTON
 ========================================= */
 
 .navbar-menu-button {
   display: none;
 
   width: 38px;
-
   height: 38px;
 
   align-items: center;
-
   justify-content: center;
 
   border: 1px solid rgba(148, 163, 184, 0.12);
@@ -374,109 +352,15 @@ section {
 /* =========================================
    MOBILE MENU
    IMPORTANT:
-   It is positioned outside navbar flow.
+   HIDDEN COMPLETELY ON DESKTOP
 ========================================= */
 
 .mobile-menu {
-  position: absolute;
-
-  top: calc(100% + 8px);
-
-  left: 0;
-
-  right: 0;
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 4px;
-
-  padding: 12px;
-
-  border: 1px solid rgba(148, 163, 184, 0.08);
-
-  border-radius: 14px;
-
-  background: rgba(7, 11, 22, 0.94);
-
-  backdrop-filter: blur(20px);
-
-  -webkit-backdrop-filter: blur(20px);
-
-  opacity: 0;
-
-  visibility: hidden;
-
-  pointer-events: none;
-
-  transform: translateY(-10px);
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    visibility 0.3s ease;
-
-  z-index: 1001;
-}
-
-/* OPEN */
-
-.mobile-menu-open {
-  opacity: 1;
-
-  visibility: visible;
-
-  pointer-events: auto;
-
-  transform: translateY(0);
-}
-
-/* MOBILE MENU LINKS */
-
-.mobile-menu a {
-  padding: 13px 15px;
-
-  border-radius: 8px;
-
-  color: #94a3b8;
-
-  font-size: 13px;
-
-  transition:
-    color 0.3s ease,
-    background 0.3s ease;
-}
-
-.mobile-menu a:hover,
-.mobile-menu a.active {
-  color: #38bdf8;
-
-  background: rgba(56, 189, 248, 0.06);
-}
-
-/* MOBILE RESUME */
-
-.mobile-resume {
-  display: flex;
-
-  align-items: center;
-
-  gap: 9px;
-
-  margin-top: 6px;
-
-  color: #38bdf8 !important;
-
-  border-top: 1px solid rgba(148, 163, 184, 0.08);
-
-  border-radius: 0 !important;
-
-  padding-top: 17px !important;
+  display: none;
 }
 
 /* =========================================
-   RESPONSIVE - TABLET / MOBILE
+   TABLET / MOBILE
 ========================================= */
 
 @media (max-width: 900px) {
@@ -484,45 +368,144 @@ section {
     padding: 14px 20px;
   }
 
+  /* Hide desktop navigation */
+
   .navbar-links {
     display: none;
   }
+
+  /* Show hamburger */
 
   .navbar-menu-button {
     display: flex;
   }
 
+  /* Hide desktop resume */
+
   .navbar-resume {
     display: none;
   }
 
-  /*
-       IMPORTANT:
-       Navbar height remains only 62px.
-       Mobile menu is absolutely positioned.
-    */
-
-  .navbar-inner {
-    height: 62px;
-
-    position: relative;
-  }
+  /* =====================================
+       MOBILE MENU
+    ===================================== */
 
   .mobile-menu {
+    position: absolute;
+
     top: calc(100% + 8px);
 
     left: 0;
-
     right: 0;
 
     width: 100%;
 
-    margin: 0;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 10px;
+
+    border: 1px solid rgba(148, 163, 184, 0.08);
+
+    border-radius: 14px;
+
+    background: rgba(7, 11, 22, 0.96);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+
+    z-index: 1001;
+  }
+
+  /* =====================================
+       OPEN MOBILE MENU
+    ===================================== */
+
+  .mobile-menu-open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+  /* =====================================
+       MOBILE LINKS
+    ===================================== */
+
+  .mobile-menu a {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 46px;
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    transition:
+      color 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .mobile-menu a:hover,
+  .mobile-menu a.active {
+    color: #38bdf8;
+
+    background: rgba(56, 189, 248, 0.06);
+  }
+
+  /* =====================================
+       MOBILE RESUME
+    ===================================== */
+
+  .mobile-resume {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 6px;
+
+    padding-top: 15px !important;
+
+    border-top: 1px solid rgba(148, 163, 184, 0.08);
+
+    border-radius: 0 !important;
+
+    color: #38bdf8 !important;
   }
 }
 
 /* =========================================
-   RESPONSIVE - SMALL MOBILE
+   SMALL MOBILE
 ========================================= */
 
 @media (max-width: 650px) {
@@ -534,7 +517,6 @@ section {
     height: 58px;
 
     padding-left: 16px;
-
     padding-right: 10px;
 
     border-radius: 13px;
@@ -550,27 +532,31 @@ section {
 
   .theme-toggle {
     width: 36px;
-
     height: 36px;
   }
 
   .navbar-menu-button {
     width: 36px;
-
     height: 36px;
   }
 
   .mobile-menu {
     top: calc(100% + 7px);
 
-    border-radius: 13px;
+    padding: 9px;
 
-    padding: 10px;
+    border-radius: 13px;
+  }
+
+  .mobile-menu a {
+    min-height: 44px;
+
+    padding: 11px 14px;
   }
 }
 
 /* =========================================
-   LIGHT MODE - NAVBAR
+   LIGHT MODE
 ========================================= */
 
 [data-theme='light'] .navbar-inner {
@@ -609,11 +595,11 @@ section {
 }
 
 [data-theme='light'] .mobile-menu {
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.97);
 
   border-color: rgba(15, 23, 42, 0.08);
 
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
 }
 
 [data-theme='light'] .mobile-menu a {
@@ -635,7 +621,7 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 30px 7% 65px;
+  padding: 120px 7% 65px;
   overflow: hidden;
 
   background:
@@ -4342,4 +4328,108 @@ body,
   .mouse-dot {
     display: none;
   }
+}
+
+/* =========================================================
+   FINAL MOBILE NAVBAR FIX
+   Keeps navbar fixed while scrolling and prevents the
+   mobile menu from becoming transparent over the Hero.
+========================================================= */
+
+.navbar-new {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 10000 !important;
+  transform: none !important;
+}
+
+.navbar-inner {
+  position: relative !important;
+  z-index: 10001 !important;
+}
+
+@media (max-width: 900px) {
+  .navbar-new {
+    padding: 12px 15px !important;
+  }
+
+  .navbar-inner {
+    width: 100%;
+    max-width: 1250px;
+    height: 58px;
+  }
+
+  /* Mobile menu belongs to the fixed navbar */
+  .mobile-menu {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 10002 !important;
+
+    /* Fully opaque so Hero content cannot show through it */
+    background: #070b16 !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    border: 1px solid rgba(148, 163, 184, 0.12) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .mobile-menu-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Keep Hero and every section below the fixed navbar */
+  .hero,
+  .section,
+  .contact-section,
+  .footer {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar-new {
+    padding: 10px 10px !important;
+  }
+
+  .navbar-inner {
+    height: 58px;
+    padding-left: 16px;
+    padding-right: 10px;
+  }
+
+  .mobile-menu {
+    top: calc(100% + 7px) !important;
+    width: 100% !important;
+    max-height: calc(100vh - 85px);
+    overflow-y: auto;
+  }
+}
+
+/* Light theme: opaque mobile menu */
+[data-theme='light'] .mobile-menu {
+  background: #ffffff !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Prevent horizontal movement caused by fixed navbar */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
