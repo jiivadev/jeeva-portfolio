@@ -35,7 +35,7 @@ section {
   max-width: 1200px;
   margin: 0 auto;
 
-  padding: 120px 40px;
+  padding: 75px 40px 85px;
 }
 
 .section h2 {
@@ -85,7 +85,13 @@ section {
     background 0.35s ease;
 }
 
+/* =========================================
+   NAVBAR INNER
+========================================= */
+
 .navbar-inner {
+  position: relative;
+
   max-width: 1250px;
 
   height: 62px;
@@ -116,7 +122,9 @@ section {
     box-shadow 0.35s ease;
 }
 
-/* Scrolled navbar */
+/* =========================================
+   SCROLLED NAVBAR
+========================================= */
 
 .navbar-scrolled {
   padding-top: 10px;
@@ -202,7 +210,9 @@ section {
   background: rgba(255, 255, 255, 0.03);
 }
 
-/* Active */
+/* =========================================
+   ACTIVE LINK
+========================================= */
 
 .navbar-links a.active {
   color: #38bdf8;
@@ -220,6 +230,7 @@ section {
   bottom: 2px;
 
   width: 4px;
+
   height: 4px;
 
   transform: translateX(-50%);
@@ -243,7 +254,9 @@ section {
   gap: 10px;
 }
 
-/* Resume */
+/* =========================================
+   RESUME BUTTON
+========================================= */
 
 .navbar-resume {
   display: inline-flex;
@@ -276,16 +289,60 @@ section {
 }
 
 /* =========================================
-   MOBILE BUTTON
+   THEME TOGGLE
+========================================= */
+
+.theme-toggle {
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: #facc15;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg) scale(1.05);
+
+  border-color: #38bdf8;
+
+  background: rgba(56, 189, 248, 0.08);
+}
+
+/* =========================================
+   MOBILE MENU BUTTON
 ========================================= */
 
 .navbar-menu-button {
   display: none;
 
   width: 38px;
+
   height: 38px;
 
   align-items: center;
+
   justify-content: center;
 
   border: 1px solid rgba(148, 163, 184, 0.12);
@@ -302,28 +359,131 @@ section {
 
   transition:
     color 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
 .navbar-menu-button:hover {
   color: #38bdf8;
 
   border-color: #38bdf8;
+
+  background: rgba(56, 189, 248, 0.05);
 }
 
 /* =========================================
    MOBILE MENU
+   IMPORTANT:
+   It is positioned outside navbar flow.
 ========================================= */
 
 .mobile-menu {
-  display: none;
+  position: absolute;
+
+  top: calc(100% + 8px);
+
+  left: 0;
+
+  right: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 12px;
+
+  border: 1px solid rgba(148, 163, 184, 0.08);
+
+  border-radius: 14px;
+
+  background: rgba(7, 11, 22, 0.94);
+
+  backdrop-filter: blur(20px);
+
+  -webkit-backdrop-filter: blur(20px);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform: translateY(-10px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+
+  z-index: 1001;
+}
+
+/* OPEN */
+
+.mobile-menu-open {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform: translateY(0);
+}
+
+/* MOBILE MENU LINKS */
+
+.mobile-menu a {
+  padding: 13px 15px;
+
+  border-radius: 8px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a.active {
+  color: #38bdf8;
+
+  background: rgba(56, 189, 248, 0.06);
+}
+
+/* MOBILE RESUME */
+
+.mobile-resume {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 6px;
+
+  color: #38bdf8 !important;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.08);
+
+  border-radius: 0 !important;
+
+  padding-top: 17px !important;
 }
 
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE - TABLET / MOBILE
 ========================================= */
 
 @media (max-width: 900px) {
+  .navbar-new {
+    padding: 14px 20px;
+  }
+
   .navbar-links {
     display: none;
   }
@@ -336,88 +496,34 @@ section {
     display: none;
   }
 
+  /*
+       IMPORTANT:
+       Navbar height remains only 62px.
+       Mobile menu is absolutely positioned.
+    */
+
+  .navbar-inner {
+    height: 62px;
+
+    position: relative;
+  }
+
   .mobile-menu {
-    max-width: 1250px;
+    top: calc(100% + 8px);
 
-    margin: 10px auto 0;
+    left: 0;
 
-    padding: 12px;
+    right: 0;
 
-    display: flex;
+    width: 100%;
 
-    flex-direction: column;
-
-    gap: 4px;
-
-    border: 1px solid rgba(148, 163, 184, 0.08);
-
-    border-radius: 14px;
-
-    background: rgba(7, 11, 22, 0.94);
-
-    backdrop-filter: blur(20px);
-
-    -webkit-backdrop-filter: blur(20px);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform: translateY(-10px);
-
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease,
-      visibility 0.3s ease;
-  }
-
-  .mobile-menu-open {
-    opacity: 1;
-
-    visibility: visible;
-
-    transform: translateY(0);
-  }
-
-  .mobile-menu a {
-    padding: 13px 15px;
-
-    border-radius: 8px;
-
-    color: #94a3b8;
-
-    font-size: 13px;
-
-    transition:
-      color 0.3s ease,
-      background 0.3s ease;
-  }
-
-  .mobile-menu a:hover,
-  .mobile-menu a.active {
-    color: #38bdf8;
-
-    background: rgba(56, 189, 248, 0.06);
-  }
-
-  .mobile-resume {
-    display: flex;
-
-    align-items: center;
-
-    gap: 9px;
-
-    margin-top: 6px;
-
-    color: #38bdf8 !important;
-
-    border-top: 1px solid rgba(148, 163, 184, 0.08);
-
-    border-radius: 0 !important;
-
-    padding-top: 17px !important;
+    margin: 0;
   }
 }
+
+/* =========================================
+   RESPONSIVE - SMALL MOBILE
+========================================= */
 
 @media (max-width: 650px) {
   .navbar-new {
@@ -429,12 +535,96 @@ section {
 
     padding-left: 16px;
 
+    padding-right: 10px;
+
     border-radius: 13px;
   }
 
   .navbar-logo {
     font-size: 17px;
   }
+
+  .navbar-actions {
+    gap: 7px;
+  }
+
+  .theme-toggle {
+    width: 36px;
+
+    height: 36px;
+  }
+
+  .navbar-menu-button {
+    width: 36px;
+
+    height: 36px;
+  }
+
+  .mobile-menu {
+    top: calc(100% + 7px);
+
+    border-radius: 13px;
+
+    padding: 10px;
+  }
+}
+
+/* =========================================
+   LIGHT MODE - NAVBAR
+========================================= */
+
+[data-theme='light'] .navbar-inner {
+  background: rgba(255, 255, 255, 0.82);
+
+  border-color: rgba(15, 23, 42, 0.08);
+
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme='light'] .navbar-scrolled .navbar-inner {
+  background: rgba(255, 255, 255, 0.94);
+
+  border-color: rgba(15, 23, 42, 0.08);
+
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
+}
+
+[data-theme='light'] .logo-name {
+  color: #0f172a;
+}
+
+[data-theme='light'] .navbar-links a {
+  color: #64748b;
+}
+
+[data-theme='light'] .navbar-links a:hover,
+[data-theme='light'] .navbar-links a.active {
+  color: #0284c7;
+}
+
+[data-theme='light'] .navbar-menu-button {
+  color: #334155;
+
+  background: rgba(15, 23, 42, 0.03);
+}
+
+[data-theme='light'] .mobile-menu {
+  background: rgba(255, 255, 255, 0.96);
+
+  border-color: rgba(15, 23, 42, 0.08);
+
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+}
+
+[data-theme='light'] .mobile-menu a {
+  color: #475569;
+}
+
+[data-theme='light'] .mobile-menu a:hover,
+[data-theme='light'] .mobile-menu a.active {
+  color: #0284c7;
+
+  background: rgba(14, 165, 233, 0.06);
 }
 
 /* =========================================
@@ -443,13 +633,9 @@ section {
 
 .hero {
   min-height: 100vh;
-
   display: flex;
-
   align-items: center;
-
-  padding: 120px 7% 80px;
-
+  padding: 30px 7% 65px;
   overflow: hidden;
 
   background:
@@ -3264,10 +3450,6 @@ section {
 
   .navbar a {
     font-size: 12px;
-  }
-
-  .section {
-    padding: 90px 20px;
   }
 
   .hero {
