@@ -30,7 +30,7 @@ function Hero() {
             </a>
 
             <a
-              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              href={`${import.meta.env.BASE_URL}JeevaM.pdf`}
               target='_blank'
               rel='noopener noreferrer'
               className='secondary-button'
